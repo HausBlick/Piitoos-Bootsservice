@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Impressum" description="Impressum und Anbieterkennzeichnung gemäß § 5 TMG für Piitoo's Bootsservice.">
+  <article class="legal">
+    <header class="legal-header">
+      <div class="container container-narrow">
+        <p class="eyebrow">Rechtliches</p>
+        <h1>Impressum</h1>
+      </div>
+    </header>
+
+    <section>
+      <div class="container container-narrow">
+
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>
+          Piitoo's Bootsservice<br />
+          Peter Kowalewski<br />
+          Tavernengasse 4<br />
+          88094 Oberteuringen<br />
+          Deutschland
+        </p>
+
+        <h3>Kontakt</h3>
+        <p>
+          Telefon: 0176 96201886 / 07541 3773099<br />
+          E-Mail: piitoosbootsservice@gmail.com
+        </p>
+
+        <h3>Umsatzsteuer-ID</h3>
+        <p class="placeholder-note">
+          <strong>[Platzhalter]</strong> Falls vorhanden, hier die Umsatzsteuer-Identifikationsnummer
+          gemäß § 27 a Umsatzsteuergesetz eintragen. Bei Kleinunternehmer-Status nach § 19 UStG
+          kann stattdessen ein Hinweis hierauf erfolgen.
+        </p>
+
+        <h3>Berufsbezeichnung</h3>
+        <p>
+          Bootsbauer<br />
+          Verliehen in: Deutschland
+        </p>
+
+        <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+        <p>
+          Peter Kowalewski<br />
+          Tavernengasse 4<br />
+          88094 Oberteuringen
+        </p>
+
+        <h3>Streitschlichtung</h3>
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+          <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>
+        </p>
+        <p>
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+          Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+
+        <h3>Haftung für Inhalte</h3>
+        <p>
+          Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten
+          nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+          Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
+          Informationen zu überwachen oder nach Umständen zu forschen, die auf eine
+          rechtswidrige Tätigkeit hinweisen.
+        </p>
+
+        <h3>Haftung für Links</h3>
+        <p>
+          Unser Angebot enthält ggf. Links zu externen Webseiten Dritter, auf deren Inhalte
+          wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine
+          Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige
+          Anbieter oder Betreiber der Seiten verantwortlich.
+        </p>
+
+        <h3>Urheberrecht</h3>
+        <p>
+          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
+          unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung,
+          Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes
+          bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+        </p>
+
+        <div class="placeholder-box">
+          <strong>⚠️ Bitte vor Veröffentlichung prüfen:</strong>
+          <ul>
+            <li>Umsatzsteuer-ID einfügen oder Kleinunternehmer-Hinweis ergänzen</li>
+            <li>Berufshaftpflichtversicherung — falls gewerblich erforderlich, hier ergänzen (Name, Anschrift, Geltungsraum)</li>
+            <li>Gewerbeanmeldung / Handwerksrolle-Eintrag prüfen — ggf. Aufsichtsbehörde nennen</li>
+            <li>Diese Vorlage ersetzt keine Rechtsberatung. Für eine rechtssichere Version empfehlen wir einen Impressums-Generator wie <a href="https://www.e-recht24.de" target="_blank" rel="noopener">e-recht24.de</a> oder <a href="https://www.activemind.de/datenschutz/datenschutzbeauftragter/impressumsgenerator/" target="_blank" rel="noopener">activemind.de</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </article>
+
+  <style>
+    .legal-header {
+      padding: var(--space-6) 0 var(--space-3);
+      background: var(--color-paper);
+    }
+
+    .legal-header h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin: 0;
+    }
+
+    .legal {
+      padding-bottom: var(--space-7);
+    }
+
+    .legal h2 {
+      font-size: var(--fs-xl);
+      margin-top: var(--space-4);
+      margin-bottom: var(--space-2);
+    }
+
+    .legal h3 {
+      font-size: var(--fs-md);
+      margin-top: var(--space-4);
+      margin-bottom: var(--space-1);
+      font-family: var(--font-body);
+      font-weight: 600;
+      color: var(--color-deep);
+    }
+
+    .legal p {
+      font-size: var(--fs-base);
+      line-height: 1.7;
+      max-width: none;
+    }
+
+    .legal a {
+      color: var(--color-sea);
+      text-decoration: underline;
+      text-decoration-color: rgba(45, 90, 135, 0.4);
+      text-underline-offset: 3px;
+    }
+
+    .legal a:hover {
+      color: var(--color-sunset);
+      text-decoration-color: var(--color-sunset);
+    }
+
+    .placeholder-note {
+      background: rgba(232, 123, 60, 0.08);
+      border-left: 3px solid var(--color-sunset);
+      padding: var(--space-2) var(--space-3);
+      font-size: var(--fs-sm);
+      color: var(--text-secondary);
+    }
+
+    .placeholder-box {
+      margin-top: var(--space-5);
+      padding: var(--space-3);
+      background: var(--color-cream);
+      border-radius: var(--radius-md);
+      border: 1px dashed var(--color-amber);
+    }
+
+    .placeholder-box strong {
+      color: var(--color-amber);
+      display: block;
+      margin-bottom: var(--space-1);
+    }
+
+    .placeholder-box ul {
+      margin: 0;
+      padding-left: 1.25rem;
+      font-size: var(--fs-sm);
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+  </style>
+</BaseLayout>

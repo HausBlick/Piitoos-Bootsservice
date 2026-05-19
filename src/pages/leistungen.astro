@@ -1,0 +1,381 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const baseUrl = import.meta.env.BASE_URL;
+const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
+---
+
+<BaseLayout
+  title="Leistungen"
+  description="Maßgefertigte Persenninge, Polster, Reparaturen und Bootsservice. Pflege, Instandhaltung, Liegeplatzservice und Coaching am Bodensee."
+>
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="container container-narrow">
+      <p class="eyebrow reveal reveal-1">Was wir tun</p>
+      <h1 class="reveal reveal-2">
+        Unsere<br /><em>Leistungen.</em>
+      </h1>
+      <p class="lead reveal reveal-3">
+        Alles rund ums Boot — aus einer Werkstatt, mit einer Handschrift. Hochwertige
+        Verarbeitung, faire Preise und termintreue Fertigstellung.
+      </p>
+    </div>
+  </header>
+
+  <!-- PERSENNING & POLSTER -->
+  <section class="service-section service-section--alt">
+    <div class="container service-block">
+      <div class="service-meta">
+        <span class="service-num">01</span>
+        <p class="eyebrow">Maßanfertigung</p>
+      </div>
+      <div class="service-content">
+        <h2>Persenning &amp; Polster.<br /><em>Maßgefertigt.</em></h2>
+        <p class="lead">
+          Ob Neuanfertigung oder Instandsetzung — bei uns erhalten Sie individuelle
+          Lösungen rund um Persenninge und Polster.
+        </p>
+
+        <div class="service-process">
+          <div class="process-step">
+            <span class="process-dot"></span>
+            <div>
+              <h4>Ersteinschätzung</h4>
+              <p>Nach einer ersten Einschätzung vereinbaren wir einen Termin direkt am Boot.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <span class="process-dot"></span>
+            <div>
+              <h4>Präzises Aufmaß</h4>
+              <p>Am Liegeplatz nehmen wir genau Maß — passgenauer geht es nicht.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <span class="process-dot"></span>
+            <div>
+              <h4>Beratung &amp; Angebot</h4>
+              <p>Persönliche Beratung zur optimalen Materialauswahl. Angebot kostenlos und unverbindlich.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <span class="process-dot"></span>
+            <div>
+              <h4>Fertigung &amp; Montage</h4>
+              <p>Hochwertige Verarbeitung in unserer eigenen Werkstatt — termintreu.</p>
+            </div>
+          </div>
+        </div>
+
+        <ul class="service-list">
+          <li>Persenninge — Vollpersenning, Kuchenbude, Cockpitpersenning</li>
+          <li>Polster — Innen- und Außenbereich, in Maß und Form</li>
+          <li>Reparaturen — Nähte, Reißverschlüsse, Aufdoppelungen</li>
+          <li>Sonderanfertigungen aller Art</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE -->
+  <section class="service-section">
+    <div class="container service-block service-block--reverse">
+      <div class="service-meta">
+        <span class="service-num">02</span>
+        <p class="eyebrow">Servicearbeiten</p>
+      </div>
+      <div class="service-content">
+        <h2>Bootsservice.<br /><em>Sorgenfrei unterwegs.</em></h2>
+        <p class="lead">
+          Wir bieten umfassende Serviceleistungen rund um Ihr Boot — von Pflege und
+          regelmäßiger Instandhaltung bis hin zum zuverlässigen Liegeplatzservice.
+        </p>
+
+        <ul class="service-list service-list--columns">
+          <li>Pflege &amp; Reinigung</li>
+          <li>Regelmäßige Instandhaltung</li>
+          <li>Liegeplatzservice</li>
+          <li>Fachgerechte Reparaturen</li>
+          <li>Schnelle Hilfe vor Ort</li>
+          <li>Saisonvorbereitung</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COACHING -->
+  <section class="service-section service-section--alt">
+    <div class="container service-block">
+      <div class="service-meta">
+        <span class="service-num">03</span>
+        <p class="eyebrow">Coaching &amp; Beratung</p>
+      </div>
+      <div class="service-content">
+        <h2>An Bord lernen.<br /><em>Mit Erfahrung im Rücken.</em></h2>
+        <p class="lead">
+          Darüber hinaus unterstützen wir Sie mit praktischem Coaching — z.B. im Umgang mit
+          Takelage, Technik sowie allen wichtigen Themen an Bord.
+        </p>
+
+        <ul class="service-list service-list--columns">
+          <li>Takelage</li>
+          <li>Technik &amp; Motor</li>
+          <li>Wasser &amp; Strom an Bord</li>
+          <li>Ausrüstung</li>
+          <li>Praktische Tipps</li>
+          <li>Sicherheit auf dem Wasser</li>
+        </ul>
+
+        <p class="coaching-note">
+          Ob Wasser, Strom oder Ausrüstung — wir kümmern uns darum, dass alles einwandfrei
+          funktioniert und Sie sorgenfrei unterwegs sein können.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container cta-inner">
+      <div>
+        <p class="eyebrow eyebrow-light">Kostenlos &amp; unverbindlich</p>
+        <h2 class="cta-headline">Sagen Sie uns,<br /><em>was Sie brauchen.</em></h2>
+      </div>
+      <a href={url('/kontakt/')} class="btn btn-sunset btn-arrow">Angebot anfragen</a>
+    </div>
+  </section>
+
+  <style>
+    .page-header {
+      padding: var(--space-7) 0 var(--space-5);
+      text-align: center;
+      background:
+        radial-gradient(ellipse at top right, rgba(232, 123, 60, 0.08) 0%, transparent 50%),
+        var(--color-paper);
+    }
+
+    .page-header .eyebrow {
+      justify-content: center;
+    }
+
+    .page-header h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-sea);
+    }
+
+    .page-header .lead {
+      margin: var(--space-3) auto 0;
+    }
+
+    .service-section {
+      padding: var(--space-6) 0;
+    }
+
+    .service-section--alt {
+      background: var(--color-cream);
+    }
+
+    .service-block {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: var(--space-5);
+      align-items: start;
+    }
+
+    .service-block--reverse {
+      grid-template-columns: 1fr 200px;
+    }
+
+    .service-block--reverse .service-meta {
+      grid-column: 2;
+      grid-row: 1;
+      text-align: right;
+    }
+
+    .service-block--reverse .service-content {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    @media (max-width: 900px) {
+      .service-block,
+      .service-block--reverse {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+      }
+      .service-block--reverse .service-meta,
+      .service-block--reverse .service-content {
+        grid-column: 1;
+        text-align: left;
+      }
+      .service-block--reverse .service-meta {
+        grid-row: auto;
+      }
+    }
+
+    .service-num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(4rem, 8vw, 6rem);
+      line-height: 1;
+      color: var(--color-sunset);
+      display: block;
+      margin-bottom: var(--space-2);
+    }
+
+    .service-content h2 {
+      margin-bottom: var(--space-3);
+    }
+
+    .service-content h2 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-sea);
+    }
+
+    .service-process {
+      margin: var(--space-4) 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      padding-left: var(--space-2);
+      border-left: 1px solid rgba(10, 28, 46, 0.12);
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-2);
+      align-items: start;
+      position: relative;
+    }
+
+    .process-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--color-paper);
+      border: 2px solid var(--color-sunset);
+      margin-top: 0.45rem;
+      margin-left: calc(-1 * var(--space-2) - 8px);
+      flex-shrink: 0;
+    }
+
+    .service-section--alt .process-dot {
+      background: var(--color-cream);
+    }
+
+    .process-step h4 {
+      margin: 0 0 0.25rem;
+      font-size: var(--fs-md);
+    }
+
+    .process-step p {
+      color: var(--text-secondary);
+      font-size: var(--fs-sm);
+      margin: 0;
+    }
+
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-3) 0 0;
+    }
+
+    .service-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(10, 28, 46, 0.08);
+      font-size: var(--fs-base);
+      position: relative;
+      padding-left: 1.75rem;
+    }
+
+    .service-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 12px;
+      height: 1px;
+      background: var(--color-sunset);
+      transform: translateY(-50%);
+    }
+
+    .service-list--columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 var(--space-3);
+    }
+
+    @media (max-width: 600px) {
+      .service-list--columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .coaching-note {
+      margin-top: var(--space-3);
+      padding: var(--space-3);
+      background: rgba(232, 123, 60, 0.08);
+      border-left: 3px solid var(--color-sunset);
+      font-style: italic;
+      color: var(--text-primary);
+    }
+
+    /* CTA strip — gleicher Stil wie Startseite */
+    .cta-strip {
+      background: var(--color-ink);
+      color: var(--color-paper);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-strip::before {
+      content: '';
+      position: absolute;
+      right: -200px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(232, 123, 60, 0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .cta-headline {
+      color: var(--color-paper);
+      margin: 0;
+    }
+
+    .cta-headline em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-sunset);
+    }
+
+    .eyebrow-light {
+      color: var(--color-sunset);
+    }
+
+    .btn-sunset {
+      background: var(--color-sunset);
+      color: var(--color-ink);
+      font-weight: 600;
+    }
+    .btn-sunset:hover {
+      background: var(--color-paper);
+      transform: translateY(-1px);
+    }
+  </style>
+</BaseLayout>

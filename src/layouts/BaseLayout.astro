@@ -1,0 +1,428 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = "Maßgefertigte Persenninge, Polster und umfassender Bootsservice am Bodensee. Handwerk mit Leidenschaft seit 2020 — Peter Kowalewski, gelernter Bootsbauer aus Oberteuringen.",
+  ogImage,
+} = Astro.props;
+
+const fullTitle = title === 'Piitoo\'s Bootsservice'
+  ? title
+  : `${title} — Piitoo's Bootsservice`;
+
+const siteUrl = Astro.site?.href ?? 'https://example.com';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+// Navigation
+const baseUrl = import.meta.env.BASE_URL;
+const nav = [
+  { href: `${baseUrl}/`.replace('//', '/'), label: 'Start' },
+  { href: `${baseUrl}/ueber-uns/`.replace('//', '/'), label: 'Über uns' },
+  { href: `${baseUrl}/leistungen/`.replace('//', '/'), label: 'Leistungen' },
+  { href: `${baseUrl}/kontakt/`.replace('//', '/'), label: 'Kontakt' },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Piitoo's Bootsservice",
+      "description": description,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Tavernengasse 4",
+        "postalCode": "88094",
+        "addressLocality": "Oberteuringen",
+        "addressCountry": "DE"
+      },
+      "telephone": ["+49 176 96201886", "+49 7541 3773099"],
+      "email": "piitoosbootsservice@gmail.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Peter Kowalewski",
+        "jobTitle": "Gelernter Bootsbauer"
+      },
+      "foundingDate": "2020",
+      "areaServed": "Bodensee"
+    })} />
+
+    <link rel="icon" type="image/svg+xml" href={`${baseUrl}/favicon.svg`.replace('//', '/')} />
+
+    <!-- Preconnect für Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href={nav[0].href} class="logo" aria-label="Piitoo's Bootsservice — Startseite">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+              <path d="M4 22 Q 16 28 28 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M4 26 Q 16 32 28 26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <path d="M16 4 L 16 20 M 8 20 L 24 20 L 22 14 L 10 14 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="logo-text">Piitoo's <em>Bootsservice</em></span>
+        </a>
+
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Navigation öffnen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Hauptnavigation">
+          <ul>
+            {nav.map(item => {
+              const itemPath = item.href.replace(/\/$/, '') || '/';
+              const isCurrent = itemPath === currentPath;
+              return (
+                <li>
+                  <a href={item.href} aria-current={isCurrent ? 'page' : undefined}>
+                    {item.label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">Piitoo's <em>Bootsservice</em></span>
+          <p class="footer-tagline">Persenning, Polster &amp; Service.<br />Handwerk am Bodensee.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <address>
+            Peter Kowalewski<br />
+            Tavernengasse 4<br />
+            88094 Oberteuringen<br />
+            <br />
+            <a href="tel:+4917696201886">0176 96201886</a><br />
+            <a href="tel:+4975413773099">07541 / 3773099</a><br />
+            <a href="mailto:piitoosbootsservice@gmail.com">piitoosbootsservice@gmail.com</a>
+          </address>
+        </div>
+
+        <div class="footer-col">
+          <h4>Seiten</h4>
+          <ul>
+            {nav.map(item => (
+              <li><a href={item.href}>{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href={`${baseUrl}/impressum/`.replace('//', '/')}>Impressum</a></li>
+            <li><a href={`${baseUrl}/datenschutz/`.replace('//', '/')}>Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Piitoo's Bootsservice · Peter Kowalewski</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById('nav-toggle');
+      const nav = document.getElementById('primary-nav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-label', open ? 'Navigation schließen' : 'Navigation öffnen');
+        });
+      }
+    </script>
+
+    <style>
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        background: var(--color-ink);
+        color: var(--color-paper);
+        padding: 0.75rem 1.25rem;
+        z-index: 100;
+      }
+      .skip-link:focus {
+        left: 1rem;
+        top: 1rem;
+      }
+
+      /* Header */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(246, 243, 238, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(10, 28, 46, 0.08);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 1.1rem;
+        padding-bottom: 1.1rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--color-ink);
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+      }
+
+      .logo em {
+        font-style: italic;
+        font-weight: 300;
+        color: var(--color-sea);
+      }
+
+      .logo-mark {
+        display: inline-flex;
+        color: var(--color-sunset);
+      }
+
+      .primary-nav ul {
+        display: flex;
+        gap: 2.25rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .primary-nav a {
+        font-size: var(--fs-sm);
+        font-weight: 500;
+        color: var(--color-ink);
+        position: relative;
+        padding: 0.25rem 0;
+      }
+
+      .primary-nav a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 1px;
+        background: var(--color-sunset);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform var(--transition);
+      }
+
+      .primary-nav a:hover::after,
+      .primary-nav a[aria-current="page"]::after {
+        transform: scaleX(1);
+      }
+
+      .primary-nav a[aria-current="page"] {
+        color: var(--color-amber);
+      }
+
+      /* Mobile Nav Toggle */
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        width: 36px;
+        height: 36px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px 6px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-toggle span {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: var(--color-ink);
+        transition: all var(--transition);
+        transform-origin: center;
+      }
+
+      .nav-toggle.is-open span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+      .nav-toggle.is-open span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle.is-open span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
+
+      @media (max-width: 768px) {
+        .nav-toggle {
+          display: flex;
+        }
+
+        .primary-nav {
+          position: fixed;
+          inset: 64px 0 0 0;
+          background: var(--color-paper);
+          padding: 2rem var(--gutter);
+          transform: translateX(100%);
+          transition: transform var(--transition);
+          visibility: hidden;
+        }
+
+        .primary-nav.is-open {
+          transform: translateX(0);
+          visibility: visible;
+        }
+
+        .primary-nav ul {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .primary-nav a {
+          font-size: var(--fs-lg);
+          font-family: var(--font-display);
+        }
+      }
+
+      /* Footer */
+      .site-footer {
+        background: var(--color-ink);
+        color: var(--text-on-dark);
+        padding: var(--space-6) 0 var(--space-3);
+        margin-top: var(--space-7);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: var(--space-4);
+        margin-bottom: var(--space-5);
+      }
+
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-brand {
+          grid-column: 1 / -1;
+        }
+      }
+
+      .footer-logo {
+        font-family: var(--font-display);
+        font-size: 1.75rem;
+        display: block;
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-logo em {
+        font-style: italic;
+        color: var(--color-sunset);
+        font-weight: 300;
+      }
+
+      .footer-tagline {
+        color: rgba(246, 243, 238, 0.7);
+        font-size: var(--fs-sm);
+        line-height: 1.6;
+      }
+
+      .footer-col h4 {
+        font-family: var(--font-body);
+        font-size: var(--fs-xs);
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 1.25rem;
+        color: var(--color-sunset);
+      }
+
+      .footer-col address,
+      .footer-col ul {
+        font-size: var(--fs-sm);
+        line-height: 1.9;
+        font-style: normal;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: rgba(246, 243, 238, 0.8);
+      }
+
+      .footer-col a:hover {
+        color: var(--color-sunset);
+      }
+
+      .footer-bottom {
+        padding-top: var(--space-3);
+        border-top: 1px solid rgba(246, 243, 238, 0.12);
+        font-size: var(--fs-xs);
+        color: rgba(246, 243, 238, 0.5);
+      }
+
+      .footer-bottom p {
+        margin: 0;
+      }
+    </style>
+  </body>
+</html>

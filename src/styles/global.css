@@ -1,0 +1,287 @@
+/* ============================================
+   Piitoo's Bootsservice — Global Styles
+   Design: Refined Maritime
+   ============================================ */
+
+/* --- Font Imports --- */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+/* --- Design Tokens --- */
+:root {
+  /* Color System — Bodensee Maritime */
+  --color-ink: #0a1c2e;          /* deep navy, fast schwarz */
+  --color-deep: #14365c;         /* tiefes Bodenseeblau */
+  --color-sea: #2d5a87;          /* mittleres Marine */
+  --color-mist: #d4dde5;         /* nebelgrau */
+  --color-paper: #f6f3ee;        /* warmes Off-White */
+  --color-cream: #ebe5d8;        /* gedämpftes Cream */
+  --color-sunset: #e87b3c;       /* Sonnenuntergang-Orange */
+  --color-amber: #c45a1e;        /* tiefes Amber */
+  --color-white: #ffffff;
+
+  /* Semantic */
+  --bg-base: var(--color-paper);
+  --bg-deep: var(--color-ink);
+  --text-primary: var(--color-ink);
+  --text-secondary: #5a6b7a;
+  --text-on-dark: var(--color-paper);
+  --accent: var(--color-sunset);
+
+  /* Typography */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-base: 1.0625rem;
+  --fs-md: 1.25rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: 2rem;
+  --fs-2xl: 2.75rem;
+  --fs-3xl: 4rem;
+  --fs-display: clamp(3rem, 8vw, 6.5rem);
+
+  /* Spacing */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4.5rem;
+  --space-7: 6.5rem;
+  --space-8: 9rem;
+
+  /* Layout */
+  --content-max: 1240px;
+  --content-narrow: 720px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  /* Misc */
+  --border-soft: 1px solid rgba(10, 28, 46, 0.12);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-soft: 0 4px 24px rgba(10, 28, 46, 0.06);
+  --shadow-lift: 0 12px 48px rgba(10, 28, 46, 0.12);
+  --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.65;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  font-weight: 400;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-3);
+  font-variation-settings: 'opsz' 80;
+}
+
+h1 {
+  font-size: var(--fs-display);
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: var(--fs-xl);
+  letter-spacing: -0.015em;
+}
+
+h4 {
+  font-size: var(--fs-lg);
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+}
+
+p {
+  margin: 0 0 var(--space-2);
+  max-width: 65ch;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-2);
+  display: inline-block;
+}
+
+.lead {
+  font-size: var(--fs-md);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 56ch;
+}
+
+/* --- Layout Utilities --- */
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--content-narrow);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+section {
+  padding: var(--space-7) 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--space-6) 0;
+  }
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.95rem 1.75rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  position: relative;
+}
+
+.btn-primary {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.btn-primary:hover {
+  background: var(--color-sunset);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+}
+
+.btn-ghost:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.btn-arrow::after {
+  content: '→';
+  transition: transform var(--transition);
+}
+
+.btn-arrow:hover::after {
+  transform: translateX(4px);
+}
+
+/* --- Decorative --- */
+.divider-wave {
+  width: 64px;
+  height: 2px;
+  background: var(--accent);
+  margin: var(--space-3) 0;
+  border: none;
+}
+
+/* --- Page Reveal Animation --- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-1 { animation-delay: 0.05s; }
+.reveal-2 { animation-delay: 0.15s; }
+.reveal-3 { animation-delay: 0.28s; }
+.reveal-4 { animation-delay: 0.42s; }
+.reveal-5 { animation-delay: 0.58s; }
+
+/* --- Accessibility --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* --- Selection --- */
+::selection {
+  background: var(--color-sunset);
+  color: var(--color-paper);
+}

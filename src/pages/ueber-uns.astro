@@ -1,0 +1,317 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const baseUrl = import.meta.env.BASE_URL;
+const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
+---
+
+<BaseLayout
+  title="Über uns"
+  description="Peter Kowalewski — gelernter Bootsbauer, Segler und Angler. Die Geschichte hinter Piitoo's Bootsservice am Bodensee."
+>
+  <article class="story">
+    <header class="story-header">
+      <div class="container container-narrow">
+        <p class="eyebrow reveal reveal-1">Die Geschichte</p>
+        <h1 class="reveal reveal-2">
+          Vom Wasser<br /><em>zur Werkstatt.</em>
+        </h1>
+        <p class="story-meta reveal reveal-3">Peter Kowalewski · Gelernter Bootsbauer · Seit 2020</p>
+      </div>
+    </header>
+
+    <section class="story-body">
+      <div class="container container-narrow">
+
+        <div class="story-block">
+          <p class="dropcap">
+            Als gelernter Bootsbauer habe ich meine Leidenschaft für Boote und das Handwerk
+            früh entdeckt. Im Jahr 2020 gründete ich meine eigene bootsspezifische Näherei
+            sowie einen umfassenden Bootsservice.
+          </p>
+        </div>
+
+        <hr class="divider-wave" />
+
+        <div class="story-block">
+          <h2>Kindheit am Wasser</h2>
+          <p>
+            Durch meine Kindheit auf dem Wasser und meine langjährige Erfahrung als Angler,
+            Segler und Bootsbauer — sowie als Ausbilder unter Segel und Motor — war der Bezug
+            zum Wasser und den in Verbindung stehenden Booten immer ein zentraler Bestandteil
+            meines Lebens.
+          </p>
+        </div>
+
+        <blockquote class="pull-quote">
+          <p>„Vom Liegeplatz bis zur Werkstatt — Boote sind nicht nur mein Beruf, sondern mein Zuhause."</p>
+        </blockquote>
+
+        <div class="story-block">
+          <h2>Aus kleinen Anfängen</h2>
+          <p>
+            Begonnen hat alles im kleinen Rahmen in den eigenen vier Wänden. Eine Nähmaschine,
+            eine Idee und der feste Glaube daran, dass gutes Handwerk Zeit, Präzision und
+            echte Leidenschaft braucht.
+          </p>
+          <p>
+            Heute bieten wir als kleines Team mit viel Liebe zum Detail, handwerklichem
+            Geschick, Können und echter Leidenschaft individuelle Lösungen rund ums Boot an —
+            in unserer eigenen Werkstatt in Oberteuringen, mitten in der Bodenseeregion.
+          </p>
+        </div>
+
+        <hr class="divider-wave" />
+
+        <div class="story-stats">
+          <div class="stat">
+            <span class="stat-num">2020</span>
+            <span class="stat-label">Gründung</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Maßarbeit</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">∞</span>
+            <span class="stat-label">Liebe zum Detail</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="values">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Wofür wir stehen</p>
+          <h2>Drei Versprechen.</h2>
+        </header>
+
+        <div class="value-grid">
+          <div class="value-item">
+            <span class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 12h18M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9M3 12c0 4.97 4.03 9 9 9s9-4.03 9-9"/>
+                <path d="M12 3v18"/>
+              </svg>
+            </span>
+            <h4>Faire Preise</h4>
+            <p>Transparente Kalkulation. Keine versteckten Kosten. Was wir versprechen, halten wir.</p>
+          </div>
+
+          <div class="value-item">
+            <span class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/>
+              </svg>
+            </span>
+            <h4>Hochwertige Verarbeitung</h4>
+            <p>Sorgfältig ausgewählte Materialien. Präzises Aufmaß. Verarbeitung mit handwerklichem Anspruch.</p>
+          </div>
+
+          <div class="value-item">
+            <span class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 2"/>
+              </svg>
+            </span>
+            <h4>Termintreue</h4>
+            <p>Wir wissen: Ihr Boot soll wieder aufs Wasser. Pünktliche Fertigstellung ist für uns selbstverständlich.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-cta">
+      <div class="container container-narrow story-cta-inner">
+        <h2>Lust auf ein Gespräch?</h2>
+        <p class="lead">Wir kommen direkt an Ihr Boot — für ein präzises Aufmaß und eine ehrliche Einschätzung.</p>
+        <a href={url('/kontakt/')} class="btn btn-primary btn-arrow">Kontakt aufnehmen</a>
+      </div>
+    </section>
+  </article>
+
+  <style>
+    .story-header {
+      padding: var(--space-7) 0 var(--space-5);
+      background:
+        radial-gradient(ellipse at top right, rgba(232, 123, 60, 0.08) 0%, transparent 50%),
+        var(--color-paper);
+      text-align: center;
+    }
+
+    .story-header .eyebrow {
+      justify-content: center;
+    }
+
+    .story-header h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-sea);
+    }
+
+    .story-meta {
+      font-size: var(--fs-sm);
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+      margin-top: var(--space-2);
+    }
+
+    .story-body {
+      padding: var(--space-5) 0 var(--space-7);
+    }
+
+    .story-block {
+      margin-bottom: var(--space-5);
+    }
+
+    .story-block h2 {
+      font-size: var(--fs-xl);
+      margin-bottom: var(--space-2);
+    }
+
+    .story-block p {
+      font-size: var(--fs-md);
+      line-height: 1.7;
+      color: var(--text-primary);
+      max-width: none;
+    }
+
+    /* Editorial drop cap */
+    .dropcap::first-letter {
+      font-family: var(--font-display);
+      font-size: 4.5em;
+      float: left;
+      line-height: 0.85;
+      margin: 0.05em 0.1em 0 -0.05em;
+      color: var(--color-sunset);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .pull-quote {
+      margin: var(--space-6) 0;
+      padding: 0;
+      border-left: 3px solid var(--color-sunset);
+      padding-left: var(--space-3);
+    }
+
+    .pull-quote p {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--color-deep);
+      margin: 0;
+      letter-spacing: -0.015em;
+    }
+
+    .story-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
+      padding: var(--space-4) 0;
+      margin-top: var(--space-4);
+    }
+
+    @media (max-width: 600px) {
+      .story-stats {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      color: var(--color-ink);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: var(--fs-xs);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Values */
+    .values {
+      background: var(--color-cream);
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: var(--space-5);
+    }
+
+    .section-head .eyebrow {
+      justify-content: center;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+
+    @media (max-width: 900px) {
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .value-item {
+      text-align: center;
+    }
+
+    .value-icon {
+      display: inline-flex;
+      width: 64px;
+      height: 64px;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-paper);
+      color: var(--color-sunset);
+      border-radius: 50%;
+      margin-bottom: var(--space-2);
+      border: 1px solid rgba(232, 123, 60, 0.3);
+    }
+
+    .value-item h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    .value-item p {
+      color: var(--text-secondary);
+      font-size: var(--fs-sm);
+      max-width: 38ch;
+      margin: 0 auto;
+    }
+
+    /* CTA */
+    .story-cta {
+      padding: var(--space-6) 0;
+      text-align: center;
+    }
+
+    .story-cta-inner h2 {
+      margin-bottom: var(--space-2);
+    }
+
+    .story-cta-inner .lead {
+      margin: 0 auto var(--space-3);
+    }
+  </style>
+</BaseLayout>

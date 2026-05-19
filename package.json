@@ -1,0 +1,16 @@
+{
+  "name": "piitoos-bootsservice",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Digitale Visitenkarte für Piitoo's Bootsservice — Persenning, Polster & Service am Bodensee",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.0"
+  }
+}

@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Kontakt"
+  description="Kontakt zu Piitoo's Bootsservice in Oberteuringen am Bodensee. Telefon, E-Mail, Adresse — kostenloses und unverbindliches Angebot."
+>
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="container container-narrow">
+      <p class="eyebrow reveal reveal-1">Schreiben Sie uns</p>
+      <h1 class="reveal reveal-2">
+        Lassen Sie uns<br /><em>reden.</em>
+      </h1>
+      <p class="lead reveal reveal-3">
+        Kostenloses und unverbindliches Angebot — wir kommen direkt an Ihr Boot
+        für ein präzises Aufmaß und eine ehrliche Einschätzung.
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTACT GRID -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Linke Spalte: Direktkontakt -->
+        <div class="contact-direct">
+          <p class="eyebrow">Direkter Draht</p>
+          <h2>Schnell &amp; persönlich.</h2>
+          <p class="lead">Am liebsten reden wir mit Ihnen. Greifen Sie zum Hörer — oder schreiben Sie uns eine Mail.</p>
+
+          <div class="contact-methods">
+            <a href="tel:+4917696201886" class="contact-method">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </span>
+              <div>
+                <span class="contact-label">Mobil</span>
+                <span class="contact-value">0176 96201886</span>
+              </div>
+            </a>
+
+            <a href="tel:+4975413773099" class="contact-method">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 7h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7zM7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/>
+                </svg>
+              </span>
+              <div>
+                <span class="contact-label">Festnetz</span>
+                <span class="contact-value">07541 / 3773099</span>
+              </div>
+            </a>
+
+            <a href="mailto:piitoosbootsservice@gmail.com" class="contact-method">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </span>
+              <div>
+                <span class="contact-label">E-Mail</span>
+                <span class="contact-value">piitoosbootsservice@gmail.com</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Rechte Spalte: Werkstatt -->
+        <aside class="contact-card">
+          <p class="eyebrow eyebrow-light">Werkstatt</p>
+          <h3>Piitoo's<br /><em>Bootsservice</em></h3>
+          <hr class="divider-wave" />
+          <address>
+            <strong>Peter Kowalewski</strong><br />
+            Gelernter Bootsbauer
+            <br /><br />
+            Tavernengasse 4<br />
+            88094 Oberteuringen<br />
+            Bodenseekreis
+          </address>
+
+          <a
+            href="https://www.openstreetmap.org/?mlat=47.7327&mlon=9.5163#map=15/47.7327/9.5163"
+            class="map-link"
+            target="_blank"
+            rel="noopener"
+          >
+            Auf der Karte zeigen →
+          </a>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HINWEIS -->
+  <section class="contact-note">
+    <div class="container container-narrow">
+      <p>
+        <strong>Hinweis:</strong> Für eine schnelle Anfrage erreichen Sie uns am besten
+        telefonisch oder per E-Mail. Geben Sie kurz Ihr Bootsmodell, den Liegeplatz und
+        Ihr Anliegen an — wir melden uns zeitnah mit einem Termin für die Ersteinschätzung.
+      </p>
+    </div>
+  </section>
+
+  <style>
+    .page-header {
+      padding: var(--space-7) 0 var(--space-5);
+      text-align: center;
+      background:
+        radial-gradient(ellipse at top right, rgba(232, 123, 60, 0.08) 0%, transparent 50%),
+        var(--color-paper);
+    }
+
+    .page-header .eyebrow {
+      justify-content: center;
+    }
+
+    .page-header h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-sea);
+    }
+
+    .page-header .lead {
+      margin: var(--space-3) auto 0;
+    }
+
+    .contact-section {
+      padding: var(--space-5) 0 var(--space-6);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: var(--space-5);
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Direkter Kontakt */
+    .contact-direct h2 {
+      margin-bottom: var(--space-2);
+    }
+
+    .contact-methods {
+      margin-top: var(--space-4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .contact-method {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-3);
+      align-items: center;
+      padding: var(--space-3);
+      background: var(--color-paper);
+      border: 1px solid rgba(10, 28, 46, 0.08);
+      border-radius: var(--radius-md);
+      transition: all var(--transition);
+      color: var(--color-ink);
+    }
+
+    .contact-method:hover {
+      border-color: var(--color-sunset);
+      transform: translateX(4px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-icon {
+      display: inline-flex;
+      width: 48px;
+      height: 48px;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-cream);
+      color: var(--color-sunset);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .contact-method:hover .contact-icon {
+      background: var(--color-sunset);
+      color: var(--color-paper);
+    }
+
+    .contact-method div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .contact-label {
+      font-size: var(--fs-xs);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .contact-value {
+      font-family: var(--font-display);
+      font-size: var(--fs-md);
+      color: var(--color-ink);
+      letter-spacing: -0.01em;
+    }
+
+    /* Werkstatt-Karte */
+    .contact-card {
+      background: var(--color-ink);
+      color: var(--color-paper);
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      right: -100px;
+      bottom: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(232, 123, 60, 0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .eyebrow-light {
+      color: var(--color-sunset);
+    }
+
+    .contact-card h3 {
+      color: var(--color-paper);
+      margin-bottom: 0;
+    }
+
+    .contact-card h3 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-sunset);
+    }
+
+    .contact-card address {
+      font-style: normal;
+      line-height: 1.7;
+      font-size: var(--fs-base);
+      color: rgba(246, 243, 238, 0.85);
+      margin-bottom: var(--space-3);
+    }
+
+    .contact-card address strong {
+      color: var(--color-paper);
+      font-weight: 600;
+    }
+
+    .map-link {
+      display: inline-block;
+      color: var(--color-sunset);
+      font-size: var(--fs-sm);
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: all var(--transition);
+    }
+
+    .map-link:hover {
+      color: var(--color-paper);
+      border-bottom-color: var(--color-paper);
+    }
+
+    /* Hinweis */
+    .contact-note {
+      padding: 0 0 var(--space-6);
+      text-align: center;
+    }
+
+    .contact-note p {
+      font-size: var(--fs-sm);
+      color: var(--text-secondary);
+      max-width: 56ch;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .contact-note strong {
+      color: var(--color-ink);
+    }
+  </style>
+</BaseLayout>
