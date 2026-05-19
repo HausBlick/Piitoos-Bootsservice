@@ -3,7 +3,12 @@
     "allow": [
       "Bash(gh auth *)",
       "Bash(git init *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(gh api *)",
+      "Bash(git branch *)",
+      "Bash(gh workflow *)",
+      "Bash(gh run *)",
+      "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); [print\\(j['name'], j['conclusion'], [s for s in j['steps']]\\) for j in data['jobs']]\")"
     ]
   }
 }

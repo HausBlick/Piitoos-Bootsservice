@@ -149,19 +149,12 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
     .page-header {
       padding: var(--space-7) 0 var(--space-5);
       text-align: center;
-      background:
-        radial-gradient(ellipse at top right, rgba(232, 123, 60, 0.08) 0%, transparent 50%),
-        var(--color-paper);
+      background: var(--color-paper);
+      border-bottom: 1px solid rgba(17, 17, 17, 0.08);
     }
 
     .page-header .eyebrow {
       justify-content: center;
-    }
-
-    .page-header h1 em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--color-sea);
     }
 
     .page-header .lead {
@@ -173,7 +166,7 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
     }
 
     .service-section--alt {
-      background: var(--color-cream);
+      background: var(--color-paper);
     }
 
     .service-block {
@@ -216,23 +209,18 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
 
     .service-num {
       font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(4rem, 8vw, 6rem);
+      font-style: normal;
+      font-weight: 800;
+      font-size: clamp(3.5rem, 7vw, 5rem);
       line-height: 1;
-      color: var(--color-sunset);
+      color: var(--color-orange);
       display: block;
       margin-bottom: var(--space-2);
+      letter-spacing: -0.04em;
     }
 
     .service-content h2 {
       margin-bottom: var(--space-3);
-    }
-
-    .service-content h2 em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--color-sea);
     }
 
     .service-process {
@@ -241,7 +229,7 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
       flex-direction: column;
       gap: var(--space-3);
       padding-left: var(--space-2);
-      border-left: 1px solid rgba(10, 28, 46, 0.12);
+      border-left: 1px solid rgba(17, 17, 17, 0.12);
     }
 
     .process-step {
@@ -256,15 +244,15 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      background: var(--color-paper);
-      border: 2px solid var(--color-sunset);
+      background: var(--color-white);
+      border: 2px solid var(--color-orange);
       margin-top: 0.45rem;
       margin-left: calc(-1 * var(--space-2) - 8px);
       flex-shrink: 0;
     }
 
     .service-section--alt .process-dot {
-      background: var(--color-cream);
+      background: var(--color-paper);
     }
 
     .process-step h4 {
@@ -286,7 +274,7 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
 
     .service-list li {
       padding: 0.85rem 0;
-      border-bottom: 1px solid rgba(10, 28, 46, 0.08);
+      border-bottom: 1px solid rgba(17, 17, 17, 0.08);
       font-size: var(--fs-base);
       position: relative;
       padding-left: 1.75rem;
@@ -298,8 +286,8 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
       left: 0;
       top: 50%;
       width: 12px;
-      height: 1px;
-      background: var(--color-sunset);
+      height: 2px;
+      background: var(--color-orange);
       transform: translateY(-50%);
     }
 
@@ -318,16 +306,16 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
     .coaching-note {
       margin-top: var(--space-3);
       padding: var(--space-3);
-      background: rgba(232, 123, 60, 0.08);
-      border-left: 3px solid var(--color-sunset);
-      font-style: italic;
+      background: rgba(224, 112, 53, 0.07);
+      border-left: 3px solid var(--color-orange);
+      font-style: normal;
       color: var(--text-primary);
     }
 
-    /* CTA strip — gleicher Stil wie Startseite */
+    /* CTA strip */
     .cta-strip {
-      background: var(--color-ink);
-      color: var(--color-paper);
+      background: var(--color-charcoal);
+      color: var(--color-white);
       position: relative;
       overflow: hidden;
     }
@@ -340,7 +328,7 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
       transform: translateY(-50%);
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(232, 123, 60, 0.18) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(224, 112, 53, 0.15) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -354,27 +342,22 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
     }
 
     .cta-headline {
-      color: var(--color-paper);
+      color: var(--color-white);
       margin: 0;
     }
 
-    .cta-headline em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--color-sunset);
-    }
-
     .eyebrow-light {
-      color: var(--color-sunset);
+      color: var(--color-orange);
     }
 
     .btn-sunset {
-      background: var(--color-sunset);
-      color: var(--color-ink);
-      font-weight: 600;
+      background: var(--color-orange);
+      color: var(--color-white);
+      font-weight: 700;
     }
     .btn-sunset:hover {
-      background: var(--color-paper);
+      background: var(--color-white);
+      color: var(--color-charcoal);
       transform: translateY(-1px);
     }
   </style>

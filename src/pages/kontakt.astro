@@ -114,19 +114,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .page-header {
       padding: var(--space-7) 0 var(--space-5);
       text-align: center;
-      background:
-        radial-gradient(ellipse at top right, rgba(232, 123, 60, 0.08) 0%, transparent 50%),
-        var(--color-paper);
+      background: var(--color-paper);
+      border-bottom: 1px solid rgba(17, 17, 17, 0.08);
     }
 
     .page-header .eyebrow {
       justify-content: center;
-    }
-
-    .page-header h1 em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--color-sea);
     }
 
     .page-header .lead {
@@ -169,14 +162,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       align-items: center;
       padding: var(--space-3);
       background: var(--color-paper);
-      border: 1px solid rgba(10, 28, 46, 0.08);
+      border: 1px solid rgba(17, 17, 17, 0.08);
       border-radius: var(--radius-md);
       transition: all var(--transition);
       color: var(--color-ink);
     }
 
     .contact-method:hover {
-      border-color: var(--color-sunset);
+      border-color: var(--color-orange);
       transform: translateX(4px);
       box-shadow: var(--shadow-soft);
     }
@@ -187,15 +180,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       height: 48px;
       align-items: center;
       justify-content: center;
-      background: var(--color-cream);
-      color: var(--color-sunset);
+      background: var(--color-fog);
+      color: var(--color-orange);
       border-radius: 50%;
       flex-shrink: 0;
     }
 
     .contact-method:hover .contact-icon {
-      background: var(--color-sunset);
-      color: var(--color-paper);
+      background: var(--color-orange);
+      color: var(--color-white);
     }
 
     .contact-method div {
@@ -215,14 +208,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .contact-value {
       font-family: var(--font-display);
       font-size: var(--fs-md);
+      font-weight: 600;
       color: var(--color-ink);
-      letter-spacing: -0.01em;
     }
 
     /* Werkstatt-Karte */
     .contact-card {
-      background: var(--color-ink);
-      color: var(--color-paper);
+      background: var(--color-charcoal);
+      color: var(--color-white);
       padding: var(--space-4);
       border-radius: var(--radius-md);
       position: relative;
@@ -236,50 +229,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       bottom: -100px;
       width: 300px;
       height: 300px;
-      background: radial-gradient(circle, rgba(232, 123, 60, 0.25) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(224, 112, 53, 0.2) 0%, transparent 60%);
       pointer-events: none;
     }
 
     .eyebrow-light {
-      color: var(--color-sunset);
+      color: var(--color-orange);
     }
 
     .contact-card h3 {
-      color: var(--color-paper);
+      color: var(--color-white);
       margin-bottom: 0;
-    }
-
-    .contact-card h3 em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--color-sunset);
     }
 
     .contact-card address {
       font-style: normal;
       line-height: 1.7;
       font-size: var(--fs-base);
-      color: rgba(246, 243, 238, 0.85);
+      color: rgba(255, 255, 255, 0.8);
       margin-bottom: var(--space-3);
     }
 
     .contact-card address strong {
-      color: var(--color-paper);
-      font-weight: 600;
+      color: var(--color-white);
+      font-weight: 700;
     }
 
     .map-link {
       display: inline-block;
-      color: var(--color-sunset);
+      color: var(--color-orange);
       font-size: var(--fs-sm);
-      font-weight: 500;
+      font-weight: 600;
       border-bottom: 1px solid transparent;
       transition: all var(--transition);
     }
 
     .map-link:hover {
-      color: var(--color-paper);
-      border-bottom-color: var(--color-paper);
+      color: var(--color-white);
+      border-bottom-color: var(--color-white);
     }
 
     /* Hinweis */

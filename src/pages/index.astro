@@ -169,24 +169,24 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
     }
 
     .hero h1 {
-      color: var(--color-paper);
+      color: var(--color-white);
       margin-bottom: var(--space-3);
-      text-shadow: 0 2px 32px rgba(10, 28, 46, 0.4);
+      text-shadow: 0 2px 32px rgba(0, 0, 0, 0.4);
     }
 
     .hero h1 em {
-      font-style: italic;
-      font-weight: 300;
-      color: #ffd89c;
+      font-style: normal;
+      font-weight: 800;
+      color: var(--color-orange);
     }
 
     .hero-lead {
-      font-size: clamp(1.125rem, 1.6vw, 1.4rem);
-      line-height: 1.5;
+      font-size: clamp(1.125rem, 1.6vw, 1.35rem);
+      line-height: 1.6;
       max-width: 540px;
-      color: rgba(246, 243, 238, 0.92);
+      color: rgba(255, 255, 255, 0.88);
       margin-bottom: var(--space-4);
-      text-shadow: 0 1px 12px rgba(10, 28, 46, 0.4);
+      text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
     }
 
     .hero .eyebrow {
@@ -246,7 +246,7 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
 
     .intro-grid {
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 160px 1fr;
       gap: var(--space-5);
       align-items: start;
     }
@@ -260,18 +260,13 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
 
     .big-quote {
       font-family: var(--font-display);
-      font-size: 14rem;
+      font-size: 10rem;
+      font-weight: 800;
       line-height: 0.7;
-      color: var(--color-sunset);
-      font-style: italic;
+      color: var(--color-orange);
+      font-style: normal;
       display: block;
-      margin-top: -0.3em;
-    }
-
-    .intro-text h2 em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--color-sea);
+      margin-top: -0.1em;
     }
 
     .link-arrow {
@@ -291,7 +286,7 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
 
     /* ============ SERVICES TEASER ============ */
     .services-teaser {
-      background: var(--color-cream);
+      background: var(--color-paper);
       position: relative;
     }
 
@@ -302,12 +297,6 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
 
     .section-head .eyebrow {
       justify-content: center;
-    }
-
-    .section-head h2 em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--color-sea);
     }
 
     .service-cards {
@@ -323,10 +312,10 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
     }
 
     .service-card {
-      background: var(--color-paper);
+      background: var(--color-white);
       padding: var(--space-4) var(--space-3);
       border-radius: var(--radius-md);
-      border: 1px solid rgba(10, 28, 46, 0.08);
+      border: 1px solid rgba(17, 17, 17, 0.08);
       transition: all var(--transition);
       position: relative;
       overflow: hidden;
@@ -339,7 +328,7 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
       top: 0;
       bottom: 0;
       width: 3px;
-      background: var(--color-sunset);
+      background: var(--color-orange);
       transform: scaleY(0);
       transform-origin: top;
       transition: transform var(--transition);
@@ -356,15 +345,17 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
 
     .card-num {
       font-family: var(--font-display);
-      font-style: italic;
+      font-style: normal;
+      font-weight: 700;
       font-size: var(--fs-md);
-      color: var(--color-sunset);
+      color: var(--color-orange);
       display: block;
       margin-bottom: var(--space-2);
     }
 
     .service-card h3 {
       margin-bottom: var(--space-2);
+      font-size: var(--fs-lg);
     }
 
     .service-card p {
@@ -380,8 +371,8 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
 
     /* ============ CTA STRIP ============ */
     .cta-strip {
-      background: var(--color-ink);
-      color: var(--color-paper);
+      background: var(--color-charcoal);
+      color: var(--color-white);
       position: relative;
       overflow: hidden;
     }
@@ -394,7 +385,7 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
       transform: translateY(-50%);
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(232, 123, 60, 0.18) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(224, 112, 53, 0.15) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -408,27 +399,22 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
     }
 
     .cta-headline {
-      color: var(--color-paper);
+      color: var(--color-white);
       margin: 0;
     }
 
-    .cta-headline em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--color-sunset);
-    }
-
     .eyebrow-light {
-      color: var(--color-sunset);
+      color: var(--color-orange);
     }
 
     .btn-sunset {
-      background: var(--color-sunset);
-      color: var(--color-ink);
-      font-weight: 600;
+      background: var(--color-orange);
+      color: var(--color-white);
+      font-weight: 700;
     }
     .btn-sunset:hover {
-      background: var(--color-paper);
+      background: var(--color-white);
+      color: var(--color-charcoal);
       transform: translateY(-1px);
     }
   </style>

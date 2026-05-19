@@ -1,35 +1,32 @@
 /* ============================================
    Piitoo's Bootsservice — Global Styles
-   Design: Refined Maritime
    ============================================ */
 
-/* --- Font Imports --- */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* --- Design Tokens --- */
 :root {
-  /* Color System — Bodensee Maritime */
-  --color-ink: #0a1c2e;          /* deep navy, fast schwarz */
-  --color-deep: #14365c;         /* tiefes Bodenseeblau */
-  --color-sea: #2d5a87;          /* mittleres Marine */
-  --color-mist: #d4dde5;         /* nebelgrau */
-  --color-paper: #f6f3ee;        /* warmes Off-White */
-  --color-cream: #ebe5d8;        /* gedämpftes Cream */
-  --color-sunset: #e87b3c;       /* Sonnenuntergang-Orange */
-  --color-amber: #c45a1e;        /* tiefes Amber */
+  /* Colors — Flyer-matched */
+  --color-ink: #111111;
+  --color-charcoal: #222222;
+  --color-slate: #687882;
+  --color-fog: #dce3e8;
+  --color-paper: #f4f5f6;
   --color-white: #ffffff;
+  --color-orange: #e07035;
+  --color-orange-deep: #c05c20;
 
   /* Semantic */
-  --bg-base: var(--color-paper);
-  --bg-deep: var(--color-ink);
+  --bg-base: var(--color-white);
+  --bg-dark: var(--color-charcoal);
   --text-primary: var(--color-ink);
-  --text-secondary: #5a6b7a;
-  --text-on-dark: var(--color-paper);
-  --accent: var(--color-sunset);
+  --text-secondary: var(--color-slate);
+  --text-on-dark: var(--color-white);
+  --accent: var(--color-orange);
 
-  /* Typography */
-  --font-display: 'Fraunces', 'Georgia', serif;
-  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography — single clean font */
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --fs-xs: 0.8125rem;
   --fs-sm: 0.9375rem;
@@ -39,7 +36,7 @@
   --fs-xl: 2rem;
   --fs-2xl: 2.75rem;
   --fs-3xl: 4rem;
-  --fs-display: clamp(3rem, 8vw, 6.5rem);
+  --fs-display: clamp(2.75rem, 7vw, 5.5rem);
 
   /* Spacing */
   --space-1: 0.5rem;
@@ -57,12 +54,12 @@
   --gutter: clamp(1.25rem, 4vw, 3rem);
 
   /* Misc */
-  --border-soft: 1px solid rgba(10, 28, 46, 0.12);
+  --border-soft: 1px solid rgba(17, 17, 17, 0.1);
   --radius-sm: 4px;
   --radius-md: 8px;
-  --shadow-soft: 0 4px 24px rgba(10, 28, 46, 0.06);
-  --shadow-lift: 0 12px 48px rgba(10, 28, 46, 0.12);
-  --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-soft: 0 4px 24px rgba(17, 17, 17, 0.06);
+  --shadow-lift: 0 12px 48px rgba(17, 17, 17, 0.12);
+  --transition: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* --- Reset & Base --- */
@@ -83,7 +80,6 @@ body {
   color: var(--text-primary);
   background: var(--bg-base);
   font-weight: 400;
-  font-feature-settings: 'kern' 1, 'liga' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -103,35 +99,38 @@ a {
 /* --- Typography --- */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
   margin: 0 0 var(--space-3);
-  font-variation-settings: 'opsz' 80;
 }
 
 h1 {
   font-size: var(--fs-display);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.03em;
 }
 
 h2 {
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-size: clamp(1.75rem, 4vw, 3rem);
   letter-spacing: -0.025em;
 }
 
 h3 {
   font-size: var(--fs-xl);
-  letter-spacing: -0.015em;
 }
 
 h4 {
   font-size: var(--fs-lg);
-  font-family: var(--font-body);
   font-weight: 600;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.01em;
   line-height: 1.3;
+}
+
+/* em in headings: accent color, not italic */
+h1 em, h2 em, h3 em, h4 em {
+  font-style: normal;
+  color: var(--color-orange);
 }
 
 p {
@@ -142,7 +141,7 @@ p {
 .eyebrow {
   font-family: var(--font-body);
   font-size: var(--fs-xs);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
@@ -155,6 +154,7 @@ p {
   line-height: 1.55;
   color: var(--text-secondary);
   max-width: 56ch;
+  font-weight: 400;
 }
 
 /* --- Layout Utilities --- */
@@ -189,38 +189,37 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.95rem 1.75rem;
+  padding: 0.9rem 1.75rem;
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--fs-sm);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   border-radius: var(--radius-sm);
   border: none;
   cursor: pointer;
   transition: all var(--transition);
   text-decoration: none;
-  position: relative;
 }
 
 .btn-primary {
-  background: var(--color-ink);
-  color: var(--color-paper);
+  background: var(--color-charcoal);
+  color: var(--color-white);
 }
 
 .btn-primary:hover {
-  background: var(--color-sunset);
+  background: var(--color-orange);
   transform: translateY(-1px);
 }
 
 .btn-ghost {
   background: transparent;
-  color: var(--color-ink);
-  border: 1px solid var(--color-ink);
+  color: var(--color-charcoal);
+  border: 1.5px solid var(--color-charcoal);
 }
 
 .btn-ghost:hover {
-  background: var(--color-ink);
-  color: var(--color-paper);
+  background: var(--color-charcoal);
+  color: var(--color-white);
 }
 
 .btn-arrow::after {
@@ -234,8 +233,8 @@ section {
 
 /* --- Decorative --- */
 .divider-wave {
-  width: 64px;
-  height: 2px;
+  width: 48px;
+  height: 3px;
   background: var(--accent);
   margin: var(--space-3) 0;
   border: none;
@@ -245,7 +244,7 @@ section {
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -255,7 +254,7 @@ section {
 
 .reveal {
   opacity: 0;
-  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .reveal-1 { animation-delay: 0.05s; }
@@ -280,8 +279,7 @@ section {
   border-radius: var(--radius-sm);
 }
 
-/* --- Selection --- */
 ::selection {
-  background: var(--color-sunset);
-  color: var(--color-paper);
+  background: var(--color-orange);
+  color: var(--color-white);
 }
