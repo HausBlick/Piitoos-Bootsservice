@@ -354,12 +354,20 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
         .primary-nav {
           position: fixed;
-          inset: 64px 0 0 0;
+          top: 64px;
+          left: 0;
+          right: 0;
+          /* Explizite Hoehe statt bottom:0 — der backdrop-filter des Headers
+             macht ihn zum Containing Block, dadurch wuerde bottom:0 das Panel
+             auf Header-Hoehe zusammenfallen lassen. */
+          height: calc(100vh - 64px);
+          height: calc(100dvh - 64px);
           background: var(--color-paper);
           padding: 2rem var(--gutter);
           transform: translateX(100%);
           transition: transform var(--transition);
           visibility: hidden;
+          overflow-y: auto;
         }
 
         .primary-nav.is-open {
