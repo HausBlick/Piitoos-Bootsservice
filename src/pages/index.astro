@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import heroImage from '../assets/hero-startseite.jpg';
 const baseUrl = import.meta.env.BASE_URL;
 const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
 ---
@@ -8,40 +10,15 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg" aria-hidden="true">
-      <svg class="hero-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#2d5a87"/>
-            <stop offset="45%" stop-color="#c45a1e"/>
-            <stop offset="75%" stop-color="#e87b3c"/>
-            <stop offset="100%" stop-color="#f4a76b"/>
-          </linearGradient>
-          <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#e87b3c" stop-opacity="0.85"/>
-            <stop offset="60%" stop-color="#14365c"/>
-            <stop offset="100%" stop-color="#0a1c2e"/>
-          </linearGradient>
-          <radialGradient id="sun" cx="0.72" cy="0.62" r="0.18">
-            <stop offset="0%" stop-color="#ffd89c"/>
-            <stop offset="60%" stop-color="#e87b3c" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#e87b3c" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <rect width="1600" height="540" fill="url(#sky)"/>
-        <circle cx="1150" cy="490" r="55" fill="#ffd89c"/>
-        <rect x="0" y="0" width="1600" height="900" fill="url(#sun)"/>
-        <rect y="540" width="1600" height="360" fill="url(#water)"/>
-        <!-- water shimmer lines -->
-        <g opacity="0.4" stroke="#ffd89c" stroke-width="1" fill="none">
-          <path d="M1100 560 Q 1150 562 1200 560"/>
-          <path d="M1080 590 Q 1150 593 1220 590"/>
-          <path d="M1060 625 Q 1150 629 1240 625"/>
-          <path d="M1030 665 Q 1150 670 1270 665"/>
-          <path d="M1000 710 Q 1150 716 1300 710"/>
-        </g>
-        <!-- distant shore silhouette -->
-        <path d="M0 540 L 200 530 L 350 538 L 480 525 L 620 535 L 780 528 L 1600 538 L 1600 545 L 0 545 Z" fill="#0a1c2e" opacity="0.55"/>
-      </svg>
+      <Image
+        class="hero-img"
+        src={heroImage}
+        alt=""
+        widths={[768, 1280, 1920]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+      />
       <div class="hero-vignette"></div>
     </div>
 
@@ -147,9 +124,11 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
       z-index: 0;
     }
 
-    .hero-svg {
+    .hero-img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
       display: block;
     }
 
