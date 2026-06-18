@@ -174,6 +174,15 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       </div>
     </footer>
 
+    <!-- Cookie-Hinweis -->
+    <aside id="cookie-notice" class="cookie-notice" hidden role="note" aria-label="Hinweis zu Cookies">
+      <p class="cookie-notice-text">
+        Diese Webseite verwendet keine Marketing- oder Analyse-Cookies. Es werden ausschließlich
+        technisch notwendige Cookies gesetzt, die für den Betrieb der Seite erforderlich sind.
+      </p>
+      <button type="button" id="cookie-accept" class="cookie-notice-btn">Verstanden</button>
+    </aside>
+
     <script>
       const toggle = document.getElementById('nav-toggle');
       const nav = document.getElementById('primary-nav');
@@ -183,6 +192,30 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
           toggle.setAttribute('aria-expanded', String(open));
           toggle.classList.toggle('is-open', open);
           toggle.setAttribute('aria-label', open ? 'Navigation schließen' : 'Navigation öffnen');
+        });
+      }
+
+      // Cookie-Hinweis: nur anzeigen, solange nicht bestätigt
+      const cookieNotice = document.getElementById('cookie-notice');
+      const cookieAccept = document.getElementById('cookie-accept');
+      if (cookieNotice && cookieAccept) {
+        let accepted = false;
+        try {
+          accepted = localStorage.getItem('cookie-notice-accepted') === '1';
+        } catch (e) {
+          accepted = false;
+        }
+        if (!accepted) {
+          cookieNotice.hidden = false;
+          // kurze Verzögerung für sanftes Einblenden
+          requestAnimationFrame(() => cookieNotice.classList.add('is-visible'));
+        }
+        cookieAccept.addEventListener('click', () => {
+          cookieNotice.classList.remove('is-visible');
+          try {
+            localStorage.setItem('cookie-notice-accepted', '1');
+          } catch (e) { /* ignore */ }
+          setTimeout(() => { cookieNotice.hidden = true; }, 300);
         });
       }
     </script>
@@ -424,6 +457,64 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
       .footer-bottom p {
         margin: 0;
+      }
+
+      /* Cookie-Hinweis */
+      .cookie-notice {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 60;
+        max-width: 340px;
+        background: var(--color-white);
+        color: var(--color-ink);
+        border: 1px solid rgba(17, 17, 17, 0.1);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lift);
+        padding: var(--space-3);
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity var(--transition), transform var(--transition);
+      }
+
+      .cookie-notice.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .cookie-notice-text {
+        font-size: var(--fs-sm);
+        line-height: 1.6;
+        color: var(--text-secondary);
+        margin: 0 0 var(--space-2);
+      }
+
+      .cookie-notice-btn {
+        display: inline-block;
+        background: var(--color-orange);
+        color: var(--color-white);
+        border: none;
+        border-radius: var(--radius-sm);
+        padding: 0.6rem 1.5rem;
+        font-family: var(--font-body);
+        font-size: var(--fs-sm);
+        font-weight: 600;
+        cursor: pointer;
+        transition: background var(--transition), transform var(--transition);
+      }
+
+      .cookie-notice-btn:hover {
+        background: var(--color-charcoal);
+        transform: translateY(-1px);
+      }
+
+      @media (max-width: 480px) {
+        .cookie-notice {
+          right: 0.75rem;
+          left: 0.75rem;
+          bottom: 0.75rem;
+          max-width: none;
+        }
       }
     </style>
   </body>
