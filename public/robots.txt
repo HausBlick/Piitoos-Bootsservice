@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hausblick.github.io/Piitoos-Bootsservice/sitemap-index.xml
