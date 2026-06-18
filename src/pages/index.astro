@@ -30,35 +30,11 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
       </h1>
       <p class="hero-lead reveal reveal-3">
         Persenninge und Polster nach Maß, Reparaturen und Bootsservice rund ums Boot.
-        Peter Kowalewski aus Oberteuringen, am Bodensee, seit 2020.
+        Piitoo's Bootsservice. Seit 2020.
       </p>
       <div class="hero-cta reveal reveal-4">
-        <a href={url('/leistungen/')} class="btn btn-primary btn-arrow">Unsere Leistungen</a>
-        <a href={url('/kontakt/')} class="btn btn-ghost btn-ghost-light">Kostenloses Angebot</a>
-      </div>
-    </div>
-
-    <div class="hero-scroll" aria-hidden="true">
-      <span>scroll</span>
-      <span class="scroll-line"></span>
-    </div>
-  </section>
-
-  <!-- INTRO -->
-  <section class="intro">
-    <div class="container intro-grid">
-      <div class="intro-mark" aria-hidden="true">
-        <span class="big-quote">„</span>
-      </div>
-      <div class="intro-text">
-        <p class="eyebrow">Über Piitoo</p>
-        <h2>Gelernter Bootsbauer.<br /><em>Seit der Kindheit am Wasser.</em></h2>
-        <p class="lead">
-          Ich bin Peter — aufgewachsen am Bodensee, seit Jahren als Angler, Segler und
-          Ausbilder unterwegs. 2020 habe ich angefangen, auf eigene Rechnung zu arbeiten.
-          Inzwischen ist daraus eine richtige Werkstatt in Oberteuringen geworden.
-        </p>
-        <a href={url('/ueber-uns/')} class="link-arrow">Mehr über mich →</a>
+        <a href={url('/leistungen/')} class="btn btn-primary">Unsere Leistungen</a>
+        <a href={url('/kontakt/')} class="btn btn-light">Kostenloses Angebot</a>
       </div>
     </div>
   </section>
@@ -67,8 +43,8 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
   <section class="services-teaser">
     <div class="container">
       <header class="section-head">
-        <p class="eyebrow">Was wir tun</p>
-        <h2>Was ich mache.</h2>
+        <p class="eyebrow">Unsere Leistungen</p>
+        <h2>Was wir machen.</h2>
       </header>
 
       <div class="service-cards">
@@ -177,89 +153,15 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
       flex-wrap: wrap;
     }
 
-    .btn-ghost-light {
-      border-color: rgba(246, 243, 238, 0.85);
-      color: var(--color-paper);
-      background: rgba(246, 243, 238, 0.06);
-      backdrop-filter: blur(8px);
+    .btn-light {
+      background: var(--color-white);
+      color: var(--color-ink);
+      border-color: var(--color-white);
     }
-    .btn-ghost-light:hover {
+    .btn-light:hover {
       background: var(--color-paper);
       color: var(--color-ink);
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: var(--space-3);
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      z-index: 1;
-      color: rgba(246, 243, 238, 0.6);
-      font-size: var(--fs-xs);
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-    }
-
-    .scroll-line {
-      width: 1px;
-      height: 32px;
-      background: linear-gradient(180deg, rgba(246,243,238,0.6), transparent);
-      animation: scrollHint 2s ease-in-out infinite;
-    }
-
-    @keyframes scrollHint {
-      0%, 100% { transform: scaleY(1); opacity: 0.6; }
-      50% { transform: scaleY(0.5) translateY(8px); opacity: 0.2; }
-    }
-
-    /* ============ INTRO ============ */
-    .intro {
-      background: var(--color-paper);
-      padding: var(--space-7) 0;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: var(--space-5);
-      align-items: start;
-    }
-
-    @media (max-width: 768px) {
-      .intro-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-2);
-      }
-    }
-
-    .big-quote {
-      font-family: var(--font-display);
-      font-size: 10rem;
-      font-weight: 800;
-      line-height: 0.7;
-      color: var(--color-orange);
-      font-style: normal;
-      display: block;
-      margin-top: -0.1em;
-    }
-
-    .link-arrow {
-      display: inline-block;
-      margin-top: var(--space-3);
-      color: var(--color-ink);
-      font-weight: 500;
-      font-size: var(--fs-sm);
-      border-bottom: 1px solid var(--color-sunset);
-      padding-bottom: 2px;
-      transition: all var(--transition);
-    }
-    .link-arrow:hover {
-      color: var(--color-sunset);
-      transform: translateX(4px);
+      transform: translateY(-1px);
     }
 
     /* ============ SERVICES TEASER ============ */

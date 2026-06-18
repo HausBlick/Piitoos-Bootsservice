@@ -222,15 +222,6 @@ section {
   color: var(--color-white);
 }
 
-.btn-arrow::after {
-  content: '→';
-  transition: transform var(--transition);
-}
-
-.btn-arrow:hover::after {
-  transform: translateX(4px);
-}
-
 /* --- Decorative --- */
 .divider-wave {
   width: 48px;
