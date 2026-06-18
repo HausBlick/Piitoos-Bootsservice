@@ -17,11 +17,11 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
     <div class="container container-narrow">
       <p class="eyebrow reveal reveal-1">Was wir tun</p>
       <h1 class="reveal reveal-2">
-        Was ich<br /><em>anbiete.</em>
+        Was wir<br /><em>anbieten.</em>
       </h1>
       <p class="lead reveal reveal-3">
         Persenninge, Polster, Reparaturen und Bootsservice — alles aus einer Hand,
-        direkt am Bodensee. Ich arbeite alleine und nehme mir Zeit für jeden Auftrag.
+        direkt am Bodensee. Wir nehmen uns Zeit für jeden Auftrag.
       </p>
     </div>
   </header>
@@ -36,8 +36,8 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
       <div class="service-content">
         <h2>Persenning &amp; Polster.<br /><em>Passgenau am Boot.</em></h2>
         <p class="lead">
-          Ob neu oder Reparatur: Ich komme zu Ihrem Boot, schaue es mir an und
-          gebe Ihnen eine ehrliche Einschätzung. Kein Aufmaß vom Foto, kein Rätselraten.
+          Ob neu oder Reparatur: Wir kommen zu Ihrem Boot, schauen es uns an und
+          geben Ihnen eine ehrliche Einschätzung. Kein Aufmaß vom Foto, kein Rätselraten.
         </p>
 
         <div class="service-process">
@@ -45,28 +45,28 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
             <span class="process-dot"></span>
             <div>
               <h4>Kurzes Gespräch</h4>
-              <p>Rufen Sie an oder schreiben Sie kurz. Ich höre mir an, was Sie brauchen.</p>
+              <p>Rufen Sie an oder schreiben Sie kurz. Wir hören uns an, was Sie brauchen.</p>
             </div>
           </div>
           <div class="process-step">
             <span class="process-dot"></span>
             <div>
               <h4>Aufmaß am Liegeplatz</h4>
-              <p>Ich komme direkt zu Ihrem Boot und nehme Maß vor Ort. So passt es hinterher wirklich.</p>
+              <p>Wir kommen direkt zu Ihrem Boot und nehmen Maß vor Ort. So passt es hinterher wirklich.</p>
             </div>
           </div>
           <div class="process-step">
             <span class="process-dot"></span>
             <div>
               <h4>Materialauswahl &amp; Angebot</h4>
-              <p>Ich berate Sie bei der Materialwahl und mache Ihnen ein konkretes Angebot. Kostenlos und unverbindlich.</p>
+              <p>Wir beraten Sie bei der Materialwahl und machen Ihnen ein konkretes Angebot. Kostenlos und unverbindlich.</p>
             </div>
           </div>
           <div class="process-step">
             <span class="process-dot"></span>
             <div>
               <h4>Fertigung &amp; Lieferung</h4>
-              <p>Ich fertige alles in meiner Werkstatt und bringe es pünktlich zum vereinbarten Termin.</p>
+              <p>Wir fertigen alles in unserer Werkstatt und bringen es pünktlich zum vereinbarten Termin.</p>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
         <h2>Bootsservice.<br /><em>Wenn etwas gemacht werden muss.</em></h2>
         <p class="lead">
           Von der Saisonvorbereitung bis zum Liegeplatzservice: Wenn am Boot etwas
-          anfällt, schaue ich es mir an und erledige es.
+          anfällt, schauen wir es uns an und erledigen es.
         </p>
 
         <ul class="service-list service-list--columns">
@@ -136,7 +136,7 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
           <li>Liegeplatzservice</li>
           <li>Reparaturen vor Ort</li>
           <li>Saisonvorbereitung</li>
-          <li>Einwinterung</li>
+          <li>Individuelle Leistungen nach Absprache</li>
         </ul>
       </div>
     </div>
@@ -152,22 +152,17 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
       <div class="service-content">
         <h2>Coaching an Bord.<br /><em>Direkt auf dem Wasser.</em></h2>
         <p class="lead">
-          Ich habe viele Jahre als Ausbilder für Segel und Motor gearbeitet. Wenn Sie
+          Wir haben viele Jahre als Ausbilder für Segel und Motor gearbeitet. Wenn Sie
           etwas über Ihr Boot wissen wollen, fragen Sie einfach.
         </p>
 
         <ul class="service-list service-list--columns">
           <li>Takelage und Rigg</li>
-          <li>Motor und Technik</li>
           <li>Wasser und Strom an Bord</li>
           <li>Ausrüstung und Sicherheit</li>
           <li>Praktische Tipps für Einsteiger</li>
           <li>Individuelle Themen nach Absprache</li>
         </ul>
-
-        <p class="coaching-note">
-          Kein Frontalunterricht, sondern direkt an Ihrem Boot. Ich zeige Ihnen, was Sie wissen wollen.
-        </p>
       </div>
     </div>
   </section>
@@ -177,7 +172,7 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
     <div class="container cta-inner">
       <div>
         <p class="eyebrow eyebrow-light">Kostenlos &amp; unverbindlich</p>
-        <h2 class="cta-headline">Sagen Sie mir,<br /><em>was Sie brauchen.</em></h2>
+        <h2 class="cta-headline">Sagen Sie uns,<br /><em>was Sie brauchen.</em></h2>
       </div>
       <a href={url('/kontakt/')} class="btn btn-sunset btn-arrow">Angebot anfragen</a>
     </div>
@@ -374,14 +369,6 @@ const url = (p: string) => `${baseUrl}${p}`.replace('//', '/');
       }
     }
 
-    .coaching-note {
-      margin-top: var(--space-3);
-      padding: var(--space-3);
-      background: rgba(224, 112, 53, 0.07);
-      border-left: 3px solid var(--color-orange);
-      font-style: normal;
-      color: var(--text-primary);
-    }
 
     /* CTA strip */
     .cta-strip {
