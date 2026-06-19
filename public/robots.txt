@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://piitoosbootsservice.de/sitemap-index.xml
+Sitemap: https://hausblick.github.io/Piitoos-Bootsservice/sitemap-index.xml

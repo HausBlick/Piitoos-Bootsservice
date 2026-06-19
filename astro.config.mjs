@@ -3,9 +3,10 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  // Custom Domain: site auf die Domain, base auf '/'
-  site: 'https://piitoosbootsservice.de',
-  base: '/',
+  // Aktuell: GitHub-Pages-Unterpfad. Bei Custom-Domain-Umstellung:
+  //   site: 'https://piitoosbootsservice.de', base: '/', CNAME-Datei in public/ anlegen
+  site: 'https://hausblick.github.io',
+  base: '/Piitoos-Bootsservice',
   integrations: [sitemap()],
   build: {
     assets: 'assets',
