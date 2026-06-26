@@ -82,6 +82,10 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Verhindert seitliches Scrollen, ohne den sticky Header zu beeintraechtigen
+     (z. B. durch das off-canvas Mobil-Menue). "clip" erzeugt keinen
+     Scroll-Container, anders als "hidden". */
+  overflow-x: clip;
 }
 
 img {
